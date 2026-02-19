@@ -6,22 +6,75 @@
   body {
     @apply bg-cream text-gray-800 font-bengali;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-gold hover:bg-brown text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg 
+           transition-all duration-300 transform hover:scale-105 hover:shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2;
   }
   
   .btn-secondary {
-    @apply bg-brown hover:bg-gold text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300;
+    @apply bg-secondary hover:bg-secondary-dark text-brown font-semibold py-3 px-8 rounded-lg 
+           transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300;
+    @apply bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden 
+           hover:shadow-2xl transition-all duration-500 hover:-translate-y-2
+           border border-peach/50;
   }
   
   .input-field {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent;
+    @apply w-full px-4 py-3 border-2 border-peach rounded-xl 
+           focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+           bg-white/80 backdrop-blur-sm transition-all duration-300;
   }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-primary mb-4 
+           relative inline-block;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-secondary rounded-full;
+  }
+  
+  .badge {
+    @apply bg-secondary text-brown px-3 py-1 rounded-full text-sm font-semibold
+           inline-flex items-center;
+  }
+  
+  .price-tag {
+    @apply text-2xl font-bold text-primary relative;
+  }
+  
+  .price-tag::before {
+    content: '৳';
+    @apply text-lg mr-1 text-secondary;
+  }
+}
+
+/* Pattern backgrounds */
+.bg-sweet-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10 L35 25 L50 25 L38 35 L42 50 L30 40 L18 50 L22 35 L10 25 L25 25 Z' fill='%239B2C2C' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.bg-sweet-pattern-light {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 10 L50 30 L70 30 L55 45 L60 70 L40 55 L20 70 L25 45 L10 30 L30 30 Z' fill='%23FBBF24' fill-opacity='0.1'/%3E%3C/svg%3E");
+}
+
+.bg-sweet-pattern-large {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L40 25 L60 25 L45 40 L50 60 L30 45 L10 60 L15 40 L0 25 L20 25 Z' fill='%23FBBF24' fill-opacity='0.1'/%3E%3C/svg%3E");
+}
+
+/* Footer pattern */
+.bg-footer-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L25 15 L35 15 L27 23 L30 35 L20 28 L10 35 L13 23 L5 15 L15 15 Z' fill='%23FBBF24' fill-opacity='0.1'/%3E%3C/svg%3E");
 }
